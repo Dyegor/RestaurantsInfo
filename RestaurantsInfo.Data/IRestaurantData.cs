@@ -1,0 +1,12 @@
+﻿using RestaurantsInfo.Core;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace RestaurantsInfo.Data
+{
+    public interface IRestaurantData
+    {
+        IEnumerable<Restaurant> GetAll();
+    }
+}
