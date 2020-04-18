@@ -8,5 +8,6 @@ namespace RestaurantsInfo.Data
     public interface IRestaurantData
     {
         IEnumerable<Restaurant> GetRestaurantByName(string name);
+        Restaurant GetById(int id);
     }
 }

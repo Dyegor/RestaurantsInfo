@@ -5,14 +5,23 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RestaurantsInfo.Core;
+using RestaurantsInfo.Data;
 
 namespace RestaurantsInfo.Pages.Restaurants
 {
     public class DetailsModel : PageModel
     {
+        private readonly IRestaurantData restaurantData;
         public Restaurant Restaurant { get; set; }
-        public void OnGet()
+
+        public DetailsModel(IRestaurantData restaurantData)
         {
+            this.restaurantData = restaurantData;
+        }
+
+        public void OnGet(int restaurantId)
+        {
+            Restaurant = restaurantData.GetById(restaurantId);
         }
     }
 }

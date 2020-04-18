@@ -1,4 +1,5 @@
 ﻿@page
+
 @model RestaurantsInfo.Pages.Restaurants.ListModel
 @{
 }
@@ -26,6 +27,11 @@
         <td>@restaurant.Name</td>
         <td>@restaurant.Location</td>
         <td>@restaurant.CuisineType</td>
+        <td>
+            <a class="btn btn-lg" asp-page="./Details" asp-route-restaurantId="@restaurant.Id">
+                <i class="glyphicon glyphicon-zoom-in"></i>
+            </a>
+        </td>
     </tr>
     }
 </table>

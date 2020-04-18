@@ -8,11 +8,11 @@ namespace RestaurantsInfo.Data
 {
     public class InMemoryRestaurantData : IRestaurantData
     {
-        List<Restaurant> Restaurants;
+        List<Restaurant> restaurants;
 
         public InMemoryRestaurantData()
         {
-            Restaurants = new List<Restaurant>()
+            restaurants = new List<Restaurant>()
             {
                 new Restaurant { Id = 1, Name = "Pyrenees", Location = "St. Lukes", CuisineType = Restaurant.Cuisine.French },
                 new Restaurant { Id = 2, Name = "Block  Cafe", Location = "Blockhouse Bay", CuisineType = Restaurant.Cuisine.None },
@@ -20,9 +20,14 @@ namespace RestaurantsInfo.Data
             };
         }
 
+        public Restaurant GetById(int id)
+        {
+            return restaurants.SingleOrDefault(r => r.Id == id);
+        }
+
         public IEnumerable<Restaurant> GetRestaurantByName(string name)
         {
-            return from r in Restaurants
+            return from r in restaurants
                    where string.IsNullOrEmpty(name) || r.Name.StartsWith(name)
                    orderby r.Name
                    select r;
