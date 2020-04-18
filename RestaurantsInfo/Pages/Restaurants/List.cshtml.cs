@@ -20,9 +20,9 @@ namespace RestaurantsInfo.Pages.Restaurants
             this.config = config;
             this.restaurantData = restaurantData;
         }
-        public void OnGet()
+        public void OnGet(string searchTerm)
         {
-            Restaurants = restaurantData.GetAll();
+            Restaurants = restaurantData.GetRestaurantByName(searchTerm);
         }
     }
 }
