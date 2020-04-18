@@ -14,7 +14,9 @@ namespace RestaurantsInfo.Data
         {
             Restaurants = new List<Restaurant>()
             {
-                new Restaurant { Id = 1, Name = "Pyrenees", Location = "St. Lukes", CuisineType = Restaurant.Cuisine.French }
+                new Restaurant { Id = 1, Name = "Pyrenees", Location = "St. Lukes", CuisineType = Restaurant.Cuisine.French },
+                new Restaurant { Id = 2, Name = "Block  Cafe", Location = "Blockhouse Bay", CuisineType = Restaurant.Cuisine.None },
+                new Restaurant { Id = 3, Name = "Goode Brothers", Location = "New Lynn", CuisineType = Restaurant.Cuisine.Italian }
             };
         }
 
