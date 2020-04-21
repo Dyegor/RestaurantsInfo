@@ -20,6 +20,11 @@ namespace RestaurantsInfo.Data
             };
         }
 
+        public int Commit()
+        {
+            return 0;
+        }
+
         public Restaurant GetById(int id)
         {
             return restaurants.SingleOrDefault(r => r.Id == id);
@@ -31,6 +36,18 @@ namespace RestaurantsInfo.Data
                    where string.IsNullOrEmpty(name) || r.Name.StartsWith(name)
                    orderby r.Name
                    select r;
+        }
+
+        public Restaurant update(Restaurant updatedRestaurant)
+        {
+            var restaurant = restaurants.SingleOrDefault(r => r.Id == updatedRestaurant.Id);
+            if(restaurant != null)
+            {
+                restaurant.Name = updatedRestaurant.Name;
+                restaurant.Location = updatedRestaurant.Location;
+                restaurant.CuisineType = updatedRestaurant.CuisineType;
+            }
+            return restaurant;
         }
     }
 }
