@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.VisualStudio.Web.CodeGeneration.Contracts.Messaging;
 using RestaurantsInfo.Core;
 using RestaurantsInfo.Data;
 using static RestaurantsInfo.Core.Restaurant;
@@ -61,6 +62,7 @@ namespace RestaurantsInfo.Pages.Restaurants
                 Restaurant = restaurantData.Add(Restaurant);
             }
             restaurantData.Commit();
+            TempData["Message"] = "Restaurant saved!";
             return RedirectToPage("./Details", new { restaurantId = Restaurant.Id });
         }
     }
