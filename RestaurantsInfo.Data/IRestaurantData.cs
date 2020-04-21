@@ -9,7 +9,7 @@ namespace RestaurantsInfo.Data
     {
         IEnumerable<Restaurant> GetRestaurantByName(string name);
         Restaurant GetById(int id);
-        Restaurant update(Restaurant updatedRestaurant);
+        Restaurant Update(Restaurant updatedRestaurant);
         int Commit();
     }
 }

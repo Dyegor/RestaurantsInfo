@@ -38,7 +38,7 @@ namespace RestaurantsInfo.Data
                    select r;
         }
 
-        public Restaurant update(Restaurant updatedRestaurant)
+        public Restaurant Update(Restaurant updatedRestaurant)
         {
             var restaurant = restaurants.SingleOrDefault(r => r.Id == updatedRestaurant.Id);
             if(restaurant != null)
