@@ -1,4 +1,4 @@
-﻿@page "{restaurantId:int}"
+﻿@page "{restaurantId:int?}"
 @model RestaurantsInfo.Pages.Restaurants.EditModel
 @{
     ViewData["Title"] = "Edit";
@@ -26,4 +26,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>
+
+<a asp-page="./Edit" class="btn btn-primary">Add New Restaurant</a>
 

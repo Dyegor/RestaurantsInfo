@@ -46,14 +46,22 @@ namespace RestaurantsInfo.Pages.Restaurants
 
         public IActionResult OnPost()
         {
-            if(ModelState.IsValid)
+            if(!ModelState.IsValid)
             {
-                Restaurant = restaurantData.Update(Restaurant);
-                restaurantData.Commit();
-                return RedirectToPage("./Details", new { restaurantId = Restaurant.Id});
+                Cuisines = htmlHelper.GetEnumSelectList<Cuisine>();
+                return Page();
             }
-            Cuisines = htmlHelper.GetEnumSelectList<Cuisine>();
-            return Page();
+            if(Restaurant.Id > 0)
+            {
+
+                Restaurant = restaurantData.Update(Restaurant);
+            }
+            else
+            {
+                Restaurant = restaurantData.Add(Restaurant);
+            }
+            restaurantData.Commit();
+            return RedirectToPage("./Details", new { restaurantId = Restaurant.Id });
         }
     }
 }
