@@ -352,6 +352,4 @@ healthchecksdb
 /RestaurantsInfo/Pages/About.cshtml
 /RestaurantsInfo/Properties
 /RestaurantsInfo/wwwroot
-/RestaurantsInfo/appsettings.json
-/RestaurantsInfo/appsettings.Development.json
 /RestaurantsInfo.sln
