@@ -32,6 +32,16 @@ namespace RestaurantsInfo.Data
             return 0;
         }
 
+        public Restaurant Delete(int Id)
+        {
+            var restaurant = restaurants.FirstOrDefault(r => r.Id == Id);
+            if(restaurant != null)
+            {
+                restaurants.Remove(restaurant);
+            }
+            return restaurant;
+        }
+
         public Restaurant GetById(int id)
         {
             return restaurants.SingleOrDefault(r => r.Id == id);
