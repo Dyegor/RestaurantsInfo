@@ -28,7 +28,7 @@ namespace RestaurantsInfo
         {
             services.AddDbContextPool<RestaurantsInfoDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("RestaurantsInfoDB")));
                 
-            services.AddSingleton<IRestaurantData, InMemoryRestaurantData>();
+            services.AddScoped<IRestaurantData, SQLRestaurantData>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
