@@ -32,9 +32,9 @@ namespace RestaurantsInfo.Data
             return 0;
         }
 
-        public Restaurant Delete(int Id)
+        public Restaurant Delete(int id)
         {
-            var restaurant = restaurants.FirstOrDefault(r => r.Id == Id);
+            var restaurant = restaurants.FirstOrDefault(r => r.Id == id);
             if(restaurant != null)
             {
                 restaurants.Remove(restaurant);
