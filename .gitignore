@@ -353,3 +353,4 @@ healthchecksdb
 /RestaurantsInfo/Properties
 /RestaurantsInfo/wwwroot
 /RestaurantsInfo.sln
+/RestaurantsInfo.Data/Migrations
