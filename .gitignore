@@ -339,7 +339,6 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /RestaurantsInfo/Pages/_ViewStart.cshtml
-/RestaurantsInfo/Pages/_ViewImports.cshtml
 /RestaurantsInfo/Pages/Privacy.cshtml.cs
 /RestaurantsInfo/Pages/Privacy.cshtml
 /RestaurantsInfo/Pages/Index.cshtml.cs
