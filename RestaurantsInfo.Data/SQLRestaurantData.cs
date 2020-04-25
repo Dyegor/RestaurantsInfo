@@ -51,6 +51,11 @@ namespace RestaurantsInfo.Data
             return query;
         }
 
+        public int GetRestaurantsCount()
+        {
+            return dbContext.Restaurants.Count();
+        }
+
         public Restaurant Update(Restaurant updatedRestaurant)
         {
             var entity = dbContext.Restaurants.Attach(updatedRestaurant);

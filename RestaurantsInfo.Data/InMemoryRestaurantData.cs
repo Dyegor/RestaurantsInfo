@@ -55,6 +55,11 @@ namespace RestaurantsInfo.Data
                    select r;
         }
 
+        public int GetRestaurantsCount()
+        {
+            return restaurants.Count();
+        }
+
         public Restaurant Update(Restaurant updatedRestaurant)
         {
             var restaurant = restaurants.SingleOrDefault(r => r.Id == updatedRestaurant.Id);
